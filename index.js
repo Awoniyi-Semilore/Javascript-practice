@@ -166,33 +166,76 @@ console.log(year)
 //     console.log('invalid input, please enter a positive number.')
 // }
 
-let userInput = prompt("Enter '0' for Rock, '1' for paper or '2' for scissors")
-if (!isNaN(userInput)){
-    const sampleArray = ['Rock', 'Paper', 'Scissors']
-    const randomNumber = Math.floor(Math.random() * 3);
-    console.log('You picked ' + sampleArray[userInput])
-    console.log('Computer picked ' + sampleArray[randomNumber])
-    if(userInput == randomNumber){
-        console.log('Nobody won')
-    }else if(userInput == 0 && randomNumber == 1){
-        console.log('Computer won')
-    }
-    else if(userInput == 0 && randomNumber == 2){
-        console.log('You won')
-    }
-    else if(userInput == 1 && randomNumber == 0){
-        console.log('You won')
-    }
-    else if(userInput == 1 && randomNumber == 2){
-        console.log('Computer won')
-    }
-    else if(userInput == 2 && randomNumber == 0){
-        console.log('Computer won')
-    }
-    else if(userInput == 2 && randomNumber == 1){
-        console.log('You won')
+
+
+// let userInput = prompt("Enter '0' for Rock, '1' for paper or '2' for scissors")
+// if (!isNaN(userInput)){
+//     const sampleArray = ['Rock', 'Paper', 'Scissors']
+//     const randomNumber = Math.floor(Math.random() * 3);
+//     console.log('You picked ' + sampleArray[userInput])
+//     console.log('Computer picked ' + sampleArray[randomNumber])
+//     if(userInput == randomNumber){
+//         console.log('Nobody won')
+//     }else if(userInput == 0 && randomNumber == 1){
+//         console.log('Computer won')
+//     }
+//     else if(userInput == 0 && randomNumber == 2){
+//         console.log('You won')
+//     }
+//     else if(userInput == 1 && randomNumber == 0){
+//         console.log('You won')
+//     }
+//     else if(userInput == 1 && randomNumber == 2){
+//         console.log('Computer won')
+//     }
+//     else if(userInput == 2 && randomNumber == 0){
+//         console.log('Computer won')
+//     }
+//     else if(userInput == 2 && randomNumber == 1){
+//         console.log('You won')
+//     }
+// }
+// else{
+//     console.log('only input number 0 or 1 or 2')
+// }
+
+function studentWithHighestScore(){
+    let number = Number(prompt("Enter the total number of students whose details you want to input"))
+    
+    if (isNaN(number)){
+        console.log('Please enter only numbers')
+    }else{
+        let studentNameArray = []
+        let studentResultArray = []
+
+        for (let i = 0; i < number; i++) {
+            let studentName = prompt("Enter student name")
+            let studentResult = Number(prompt("Enter " + studentName + "'s result"))
+
+            studentNameArray.push(studentName)
+        }
+        let maxScore = studentResultArray[0]
+        let studentIndex = 0
+
+        for (let i = 1; i < studentResultArray.length; i++){
+            if (studentResultArray > maxScore){
+                maxScore = studentResultArray[i]
+                studentIndex = 1;
+            }
+        }
+            // studentResultArray.push(studentResult)
+            // function (largestResult ){
+            //     for (let c = 1; c < studentResultArray.length; i++)
+            //         if (studentResultArray > max)
+            //             max = studentResultArray[i]
+            // }
+            // let studentWithHighestResult = studentResultArray[max]
+        console.log('The student with the highest result is ' + studentNameArray[studentIndex])
     }
 }
-else{
-    console.log('only input number 0 or 1 or 2')
-}
+
+studentWithHighestScore()
+
+
+
+
