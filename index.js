@@ -199,43 +199,86 @@ console.log(year)
 //     console.log('only input number 0 or 1 or 2')
 // }
 
-function studentWithHighestScore(){
-    let number = Number(prompt("Enter the total number of students whose details you want to input"))
+// function studentWithHighestScore(){
+//     let number = Number(prompt("Enter the total number of students whose details you want to input"))
     
-    if (isNaN(number)){
-        console.log('Please enter only numbers')
-    }else{
-        let studentNameArray = []
-        let studentResultArray = []
+//     if (isNaN(number)){
+//         console.log('Please enter only numbers')
+//     }else{
+//         let studentNameArray = []
+//         let studentResultArray = []
 
-        for (let i = 0; i < number; i++) {
-            let studentName = prompt("Enter student name")
-            let studentResult = Number(prompt("Enter " + studentName + "'s result"))
+//         for (let i = 0; i < number; i++) {
+//             let studentName = prompt("Enter student name")
+//             let studentResult = Number(prompt("Enter " + studentName + "'s result"))
 
-            studentNameArray.push(studentName)
-        }
-        let maxScore = studentResultArray[0]
-        let studentIndex = 0
+//             studentNameArray.push(studentName)
+//         }
+//         let maxScore = studentResultArray[0]
+//         let studentIndex = 0
 
-        for (let i = 1; i < studentResultArray.length; i++){
-            if (studentResultArray > maxScore){
-                maxScore = studentResultArray[i]
-                studentIndex = 1;
-            }
-        }
-            // studentResultArray.push(studentResult)
-            // function (largestResult ){
-            //     for (let c = 1; c < studentResultArray.length; i++)
-            //         if (studentResultArray > max)
-            //             max = studentResultArray[i]
-            // }
-            // let studentWithHighestResult = studentResultArray[max]
-        console.log('The student with the highest result is ' + studentNameArray[studentIndex])
+//         for (let i = 1; i < studentResultArray.length; i++){
+//             if (studentResultArray > maxScore){
+//                 maxScore = studentResultArray[i]
+//                 studentIndex = 1;
+//             }
+//         }
+//             // studentResultArray.push(studentResult)
+//             // function (largestResult ){
+//             //     for (let c = 1; c < studentResultArray.length; i++)
+//             //         if (studentResultArray > max)
+//             //             max = studentResultArray[i]
+//             // }
+//             // let studentWithHighestResult = studentResultArray[max]
+//         console.log('The student with the highest result is ' + studentNameArray[studentIndex])
+//     }
+    
+// }
+
+// studentWithHighestScore()
+
+// let number1 = Number(prompt("Enter the first number"))
+// let number2 = Number(prompt("Enter the second number"))
+// if (isNaN(number1) || isNaN(number2)){
+//     console.log('Please enter only numbers')
+// }else{
+//     let operator = prompt("Enter either'+' or '-' or '/' or '*'")
+//     if (operator == '+'){
+//         const result = number1 + number2;
+//         console.log('The result is ' + result)
+//     }else if (operator == '-'){
+//         const result = number1 - number2;
+//         console.log('The result is ' + result)
+//     }else if (operator == '/'){
+//         const result = number1 / number2;
+//         console.log('The result is ' + result)
+//     }else if (operator == '*'){
+//         const result = number1 * number2;
+//         console.log('The result is ' + result)
+//     }else{
+//         console.log('Please enter the correct operator')
+//     }
+// }
+
+let details = {name: "John", age: "25", city: "Paris"}
+console.log(details.name + ' is ' + details.age + ' years old.' + ' He lives in ' + details.city)
+
+let arrayOfNumbers = [0,1,2,3,4,5,6,7,8,11,10]
+let newArray = []
+for (let i = 0; i < arrayOfNumbers.length; i++){
+    newArray.push(arrayOfNumbers[i] * 2)
+}
+
+let filteredArray = []
+for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i] > 10) {
+        filteredArray.push(newArray[i])
     }
 }
 
-studentWithHighestScore()
-
-
-
+let result = 0
+for (let i = 0; i < filteredArray.length; i++) {
+    result += filteredArray[i]
+}
+console.log("Result = " + result) 
 
